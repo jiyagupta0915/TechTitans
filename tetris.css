@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+  }
+  
+  h1 {
+    color: white;
+    margin-top: 20px;
+  }
+  
+  #game-area {
+    margin: 20px auto;
+  }
+  
+  #tetris {
+    background-color: #000;
+    border: 1px solid #fff;
+  }
+  
+  #controls {
+    margin-top: 20px;
+    color: white;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  p {
+    color: white;
+  }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental health is not a destination, but a process.</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            background-color: #f7efda;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #b3ddc4;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Main Content Styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 300px;
+            height: 100px;
+            margin: 20px 0;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            opacity: 0;
+            animation: slide-in 1s ease-out forwards;
+        }
+
+        /* Apply delays to each container for staggered effect */
+        #container1 {
+            animation-delay: 0s;
+            background-color: #f2d5ef;
+        }
+
+        #container2 {
+            animation-delay: 0.5s;
+            background-color: #cfc1e8;
+        }
+
+        #container3 {
+            animation-delay: 1s;
+            background-color: #9ca3d6;
+        }
+
+        /* Animation Definition */
+        @keyframes slide-in {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mental health is not a destination, but a process.</h1>
+    </header>
+    <main>
+        <a href="bin.html" style="text-decoration: none"><div class="container" id="container1">Binaural Beats</div></a>
+        <a href="https://www.youtube.com/watch?v=Jyy0ra2WcQQ" style="text-decoration: none"><div class="container" id="container2">Meditation</div></a>
+        <a href="ted.html" style="text-decoration: none"><div class="container" id="container3">Ted Talks</div></a>
+    </main>
+</body>
+</html>

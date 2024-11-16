@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The body achieves what the mind believes.</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            background-color: #ffe5d9;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #9d8189;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Main Content Styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 300px;
+            height: 100px;
+            margin: 20px 0;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            opacity: 0;
+            animation: slide-in 1s ease-out forwards;
+        }
+
+        /* Apply delays to each container for staggered effect */
+        #container1 {
+            animation-delay: 0s;
+            background-color: #f4acb7;
+            text-decoration: none;
+        }
+
+        #container2 {
+            animation-delay: 0.5s;
+            background-color: #ffcad4;
+        }
+
+        #container3 {
+            animation-delay: 1s;
+            background-color: #d8e2dc;
+        }
+
+        /* Animation Definition */
+        @keyframes slide-in {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        a {
+           text-decoration: none;
+           color: black; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The body achieves what the mind believes.</h1>
+    </header>
+    <main>
+        <a href="workout.html"><div class="container" id="container1">Workout</div></a>
+        <a href="articles.html"><div class="container" id="container2">Articles</div></a>
+        <div class="container" id="container3">Demonstration</div>
+    </main>
+</body>
+</html>

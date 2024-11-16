@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Body Workouts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Light gray background */
+        }
+
+        header {
+            background-color: #3a506b; /* Muted blue */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .workout-card {
+            background-color: #ffffff; /* White background for cards */
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .workout-card:hover {
+            background-color: #f0f4f8; /* Slight hover effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2f2f2f; /* Dark gray text */
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            background-color: #7b8d93; /* Muted blue-green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #4a6570; /* Darker blue-green on hover */
+        }
+
+        footer {
+            background-color: #3a506b; /* Muted blue */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Available Body Workouts</h1>
+    </header>
+
+    <div class="container">
+        <div class="workout-card" onclick="openModal('legWorkoutModal')">
+            <h3>Legs Workout</h3>
+        </div>
+        <div class="workout-card" onclick="openModal('lowerBodyWorkoutModal')">
+            <h3>Lower Body</h3>
+        </div>
+        <div class="workout-card" onclick="openModal('chestWorkoutModal')">
+            <h3>Chest Workout</h3>
+        </div>
+        <div class="workout-card" onclick="openModal('upperBodyWorkoutModal')">
+            <h3>Upper Body</h3>
+        </div>
+        <div class="workout-card" onclick="openModal('bicepsTricepsModal')">
+            <h3>Biceps/Triceps</h3>
+        </div>
+        <div class="workout-card" onclick="openModal('calvesWorkoutModal')">
+            <h3>Calves</h3>
+        </div>
+        <div class="workout-card" onclick="openModal('absWorkoutModal')">
+            <h3>Abs Workout</h3>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="legWorkoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Leg Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/q7rCeOa_m58" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Gwf8vxZ_o3s" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="lowerBodyWorkoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Lower Body Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/zZ8tWnE8kzQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/qFv0vYe8OiQ" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="chestWorkoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Chest Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/ESkI_WR1qqc" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Hww8Y6GxVbw" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wAYwAlX2-UU" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="upperBodyWorkoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Upper Body Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/S3_3-cCqavc" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/lzaarm-0MkM" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ESkI_WR1qqc" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="bicepsTricepsModal" class="modal">
+        <div class="modal-content">
+            <h2>Biceps & Triceps Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/rskrjHx1dTg" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/lBy-7EFK30o" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/EYCorwoB9r0" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="calvesWorkoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Calves Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/uVu9vToACiQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/2iP-Z2gR11o" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/74OOaPFuxts" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/PQf5OYtMMKQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/WeDZe-wFBPE" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="absWorkoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Abs Workout Videos</h2>
+            <iframe src="https://www.youtube.com/embed/8AAmaSOSyIA" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Dl8N_8UtWUU" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/G5_3PDJZ-s0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Cnmy08JgakM" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Gr1GtwTp_ko" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Fitness Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentModal = null;
+
+        function openModal(modalId) {
+            if (currentModal) {
+                currentModal.style.display = "none"; // Close any currently open modal
+            }
+            currentModal = document.getElementById(modalId);
+            currentModal.style.display = "flex";
+        }
+
+        function closeModal() {
+            if (currentModal) {
+                currentModal.style.display = "none";
+                currentModal = null;
+            }
+        }
+
+        // Close the modal when clicking outside the content
+        window.onclick = function(event) {
+            if (event.target.classList.contains("modal")) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>

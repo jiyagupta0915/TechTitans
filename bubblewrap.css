@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e795;
+    font-family: Kalam, cursive ;
+    
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#bubble-wrap {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    gap: 5px;
+}
+
+.bubble {
+    width: 50px;
+    height: 50px;
+    background-color: #f96167;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bubble.popped {
+    background-color: #89abe3;
+}

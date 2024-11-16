@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Scroll Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #dff7df;
+        }
+
+        .header {
+            position: relative; 
+            text-align: center;
+            height: 100vh; 
+        }
+
+
+        .header h1 {
+            font-size: 2.3em;
+            color: #fff; 
+            margin: 0;
+            position: absolute; 
+            top: 15%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+            
+            padding: 20px; 
+            
+            z-index: 1; 
+        }
+
+        .header video {
+            position: absolute;
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            top: 0;
+            left: 0;
+            z-index: 0; 
+        }
+
+        .container {
+            max-width: 100%;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .container h2{
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+
+        .option {
+            display: block; 
+            margin: 30px auto;
+            padding: 20px;
+            width: 70%; 
+            height: 60vh; 
+            background-color: #fbfafa;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateX(-100%); 
+            transition: opacity 0.8s ease, transform 0.8s ease; 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        .option.right {
+            transform: translateX(100%); 
+        }
+
+        .option.show {
+            opacity: 1;
+            transform: translateX(0); 
+        }
+
+        .option h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #444;
+        }
+
+        .option p {
+            font-size: 1em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .option {
+                width: 90%; 
+                height: 50vh; 
+            }
+
+            .option h2 {
+                font-size: 1.3em;
+            }
+
+            .option p {
+                font-size: 0.9em;
+            }
+
+            .header h1 {
+                font-size: 2em; 
+            }
+
+            .header img {
+                max-height: 300px; 
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+          
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Health Buddy <br>
+          Self-care is how you take your power back.
+        </h1>
+        <video autoplay muted loop class="background-video">
+          <source src="health buddy video.mp4" type="video/mp4">
+          
+        </video>
+        
+    </div>
+    
+    <div id="mind" class="container" >
+         <a href="mind.html" class="option" id="option1">
+        <h2 style="color: rgb(140, 20, 245); font-family: kalam,cursive ; font-weight: bold; font-size: 2.5em;">Mind</h2>
+        <img src="mind.jpg" alt="Landscape Picture" style="width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: -1; top: 0; left: 0;"> 
+           </a>
+
+        <a href="body.html" class="option right" id="option2">
+            <h2 style="color: teal; font-weight: bold; font-size: 2.5em;">Body</h2>
+            <img src="body.jpg" alt="Landscape Picture" style="width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: -1; top: 0; left: 0;">
+           
+        </a>
+
+        <a href="joy.html" class="option" id="option3">
+            <h2 style="color: rgb(1, 17, 17); font-weight: bold; font-size: 2.5em;">Joy</h2>
+            <img src="joy.jpg" alt="Landscape Picture" style="width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: -1; top: 0; left: 0;">
+            
+        </a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScBftTqcvrp01eoSE_qsZhO9pL5i1N_9axfEm1TfFwrEqMXFA/viewform?usp=sf_link" class="option right" id="option4">
+            <h2>FAQs</h2>
+            <img src="faqs.jpg" alt="Landscape Picture" style="width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: -1; top: 0; left: 0;">
+            <p>coming soon...</p>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; Contact us:<br>
+          Team - Tech Titans<br>
+          Kushagra Goel-kgoel_be24@thapar.edu<br>
+          Jiya Gupta-jgupta1_be24@thapar.edu
+        </p>
+    </footer>
+
+    <script>
+        function animateOnScroll() {
+            const options = document.querySelectorAll('.option');
+            const windowHeight = window.innerHeight;
+
+            options.forEach(option => {
+                const rect = option.getBoundingClientRect();
+                if (rect.top < windowHeight - 100) { 
+                    option.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+
+        animateOnScroll();
+    </script>
+</body>
+</html>
